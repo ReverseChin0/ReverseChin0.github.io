@@ -116,6 +116,6 @@ function moveCamera(){
     camera.lookAt(0,0,0);
     camera.position.z = t * -0.01;
     camera.position.x = t * -0.002;
-    camera.position.y = y * -0.0002;
+    camera.position.y = t * -0.0002;
 }
 document.body.onscroll = moveCamera;
