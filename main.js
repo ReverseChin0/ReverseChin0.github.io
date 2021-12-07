@@ -50,12 +50,12 @@ function addStar(){
 
 Array(200).fill().forEach(addStar);
 
-const spaceTex = new THREE.TextureLoader().load('space.jpg');
+const spaceTex = new THREE.TextureLoader().load('/media/space.jpg');
 scene.background = spaceTex;
 
 //Monster Hunter
 
-const monsterTex = new THREE.TextureLoader().load('monstHunter.png');
+const monsterTex = new THREE.TextureLoader().load('/media/monstHunter.png');
 
 const monstCube = new THREE.Mesh(
     new THREE.BoxGeometry(3,3,3),
@@ -65,8 +65,8 @@ const monstCube = new THREE.Mesh(
 scene.add(monstCube);
 
 //Moon
-const moonTex = new THREE.TextureLoader().load('moon.jpg');
-const normalMoonTex = new THREE.TextureLoader().load('moonNormal.jpg');
+const moonTex = new THREE.TextureLoader().load('/media/moon.jpg');
+const normalMoonTex = new THREE.TextureLoader().load('/media/moonNormal.jpg');
 
 const moon = new THREE.Mesh(
     new THREE.SphereGeometry(3,32,32),
@@ -90,7 +90,6 @@ function animate(){//gameloop
     torus.rotateZ(0.01);
 
     //controls.update();
-
     renderer.render(scene,camera);
 }
 
@@ -99,12 +98,10 @@ animate();
 window.addEventListener( 'resize', onWindowResize, false );
 
 function onWindowResize(){
-
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
 
     renderer.setSize( window.innerWidth, window.innerHeight );
-
 }
 
 function moveCamera(){
@@ -118,4 +115,5 @@ function moveCamera(){
     camera.position.x = t * -0.002;
     camera.position.y = t * -0.0002;
 }
+
 document.body.onscroll = moveCamera;
