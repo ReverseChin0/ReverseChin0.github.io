@@ -25,7 +25,7 @@ export default defineConfig({
           'success-color': '#52c41a',
           'warning-color': '#F7FA44',
           'error-color': '#FA445E',
-          'font-size-base': '14px',
+          'font-size-base': '18px',
           'heading-color': '#E4E4E4',
           'text-color': '#E4E4E4',
           'text-color-secondary': '#3FA796',
