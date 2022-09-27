@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import { Menu, Switch, } from 'antd';
-// import 'antd/dist/antd.css';
 import 'antd/dist/antd.less';
 import { useDispatch, useSelector } from 'react-redux';
 import { onSpanish,onEnglish } from '../store/slices/statesSlice';
@@ -14,7 +13,7 @@ export const NavBar = () => {
     
 
     const onChange = (checked) => {
-        checked ? dispatch(onSpanish()) : dispatch(onEnglish());
+        checked ? dispatch(onEnglish()) : dispatch(onSpanish());
     };
     
     const items = [
@@ -45,16 +44,13 @@ export const NavBar = () => {
         }, 
         { label: 
             (   
-            <>
-                <Switch checkedChildren="Spanish" unCheckedChildren="English" defaultChecked onChange={onChange} />
-            </>
-            
+                <Switch checkedChildren="English" unCheckedChildren="Español" defaultChecked onChange={onChange} />
             ),
-           key: 'language' 
+           key: 'language', 
         }
     ];
 
     return (
-      <Menu mode="horizontal" items={items} />
+      <Menu mode="horizontal" items={items} style={{justifyContent:'center', padding:'0.5rem 0'}}/>
     )
 }

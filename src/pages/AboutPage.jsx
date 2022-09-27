@@ -1,6 +1,10 @@
+import { useSelector } from "react-redux";
+import { SpanishAbout, EnglishAbout } from "./contentPage";
 
 export const AboutPage = () => {
+  const spanish = useSelector((state) => state.states.spanish);
+
   return (
-    <h1>AboutPage</h1>
+    spanish ? <SpanishAbout/> : <EnglishAbout/> 
   )
 }

@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const statesSlice = createSlice({
     name: 'states',
     initialState: {
-        spanish: true
+        spanish: false
     },
     reducers: {
         onSpanish: (state ) => {
