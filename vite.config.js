@@ -36,7 +36,7 @@ export default defineConfig({
           'body-background': '#222222',
           'component-background': '#222222',// Base background color for most components
           'border-color-base': '#D9D9D9', // base border outline a component
-          'border-color-split': '#60606F' // borde del navbar
+          'border-color-split': '#60606F', // borde del navbar
         },
         javascriptEnabled: true,
       },
