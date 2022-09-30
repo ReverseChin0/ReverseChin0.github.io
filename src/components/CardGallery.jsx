@@ -1,13 +1,13 @@
 import {Image, Card, Col } from 'antd'
 import { useState } from 'react';
 const { Meta } = Card;
-
-export const CardGallery = ({paths=[],spanWidth=8,title,description}) => {
+//xs sm md lg xl xxl
+export const CardGallery = ({paths=[],title,description}) => {
   
     const [visible, setVisible] = useState(false);
 
     return (
-        <Col span={spanWidth} style={{padding:'0.5rem'}}>
+        <Col xs={{span:24}} sm={{span:12}} lg={{span:8}}  style={{padding:'0.5rem'}}>
 
             <Card
               hoverable 
