@@ -24,15 +24,18 @@ export const EnglishAbout = () => {
         </Col>
         <Col span={3}/>
       </Row>
-      <Row style={{marginTop:'5rem'}}>
-        <Col span={7}/>
-          <Col span={10} >
+      <Row style={{marginTop:'5rem',marginBottom:'10 rem'}}>
+        <Col xs={{span:3}} lg={{span:6}}/>
+          <Col xs={{span:18}} lg={{span:12}} >
             <Card title="Contact Info" extra={<a href="/assets/images/CV_2022_Francisco.jpg" target={'_blank'}>cv</a>} style={{width: 'auto'}}>
               <p><strong>email: </strong>frank.castaneda.g@gmail.com</p>
               <p><strong>LinkedIn: </strong><a href="https://www.linkedin.com/in/francisco-emmanuel-castañeda-lópez-550b07251" target={'_blank'}>Francisco Emmanuel Castañeda López</a></p>
             </Card>
         </Col>
-        <Col span={7}/>
+        <Col xs={{span:3}} lg={{span:6}}/>
+      </Row>
+      <Row>
+        <Col style={{height:'5rem'}}/>
       </Row>
     </>
   )
