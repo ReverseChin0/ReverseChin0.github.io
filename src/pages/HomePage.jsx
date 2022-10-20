@@ -1,5 +1,6 @@
 import { Col, Row } from 'antd';
 import { useSelector } from 'react-redux';
+import 'animate.css';
 
 export const HomePage = () => {
   const spanish = useSelector((state) => state.states.spanish);
@@ -9,7 +10,7 @@ export const HomePage = () => {
     <>
       <Row style={{margin:'2% 0'}}>
         <Col span={4}/>
-        <Col span={16}>
+        <Col className='animate__animated animate__fadeIn' span={16}>
           <h1 className = 'expandedH1'> {spanish ? '¡Bienvenido!' : '¡Welcome!'} </h1>
           <p className = 'centeredtext'>
             {

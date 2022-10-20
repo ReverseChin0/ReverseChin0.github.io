@@ -10,7 +10,7 @@ export const DemoPage = () => {
     <>
       <Row style={{margin:'2% 0'}}>
         <Col span={3}/>
-        <Col span={18}>
+        <Col className='animate__animated animate__fadeIn' span={18}>
           {spanish ? <h1>Galeria</h1> : <h1>Gallery</h1> }
 
           <Row>

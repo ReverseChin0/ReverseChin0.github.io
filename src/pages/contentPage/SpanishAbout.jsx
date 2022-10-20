@@ -3,7 +3,7 @@ import { Card, Col, Image, Row } from "antd"
 export const SpanishAbout = () => {
   return (
     <>
-      <Row style={{margin:'2% 0'}}>
+      <Row className='animate__animated animate__fadeIn' style={{margin:'2% 0'}}>
           <Col span={3}/>
           <Col xs={{span:18}} lg={{span:6}} >
             <Image
@@ -24,7 +24,7 @@ export const SpanishAbout = () => {
           </Col>
           <Col span={3}/>
       </Row>
-      <Row style={{marginTop:'5rem'}}>
+      <Row className='animate__animated animate__fadeIn' style={{marginTop:'5rem'}}>
         <Col xs={{span:3}} lg={{span:6}}/>
           <Col xs={{span:18}} lg={{span:12}} >
             <Card title="Información de Contacto" extra={<a href="/assets/images/CV_2022_Francisco.jpg" target={'_blank'}>cv</a>} style={{width: 'auto'}}>

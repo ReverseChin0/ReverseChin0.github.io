@@ -1,23 +1,26 @@
 import { Col, Divider, List, Row } from "antd";
 import { useSelector } from "react-redux";
 
-const demoLinks = [
-    {
-      title:'Gifexpert',
-      link:'https://reversechin0.github.io/react-gifexpert'
-    },
-    {
-      title: 'MERN-Calendar-chino (tal vez dure un rato en cargar)',
-      link: 'https://mern-calendar-chino.herokuapp.com/auth/login'
-    },
-    {
-      title: 'SPA_Heroes',
-      link: 'https://reversechin0.github.io/spa_heroes'
-    }
-  ]
+
 
 export const DemoPageLinker = () => {
     const spanish = useSelector((state) => state.states.spanish);
+
+    const demoLinks = [
+      {
+        title:'Gifexpert',
+        link:'https://reversechin0.github.io/react-gifexpert'
+      },
+      {
+        title: spanish ? 'MERN-Calendar-chino (tal vez dure un rato en cargar)' : 'MERN-Calendar-chino (it may take a while to load)',
+        link: 'https://mern-calendar-chino.herokuapp.com/auth/login'
+      },
+      {
+        title: 'SPA_Heroes',
+        link: 'https://reversechin0.github.io/spa_heroes'
+      }
+    ]
+
   return (
     <>
         <Divider style={{borderTopColor:'#E4E4E4'}}>{ spanish ? 'Páginas de Ejemplo' : 'Example Pages'}</Divider>

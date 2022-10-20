@@ -52,6 +52,15 @@ const expeGallery = {
     desEN: 'Experiments with shaders, meshs, inverse kinematics, etcetera'                
 }
 
+const modeGallery = {
+    imagePaths : [ basePath + 'models/BattleAxe.png',
+                   basePath + 'models/World.png', ],
+    titleES: 'Modelado 3D',
+    titleEN: '3D Modelling',
+    desES: 'Modelos que he realizado',
+    desEN: 'Models i´ve made'                
+}
+
 
 export const CardsGroup = () => {
   const spanish = useSelector((state) => state.states.spanish);
@@ -86,6 +95,12 @@ export const CardsGroup = () => {
         paths={expeGallery.imagePaths} 
         title={spanish ? expeGallery.titleES : expeGallery.titleEN}
         description={spanish ? expeGallery.desES : expeGallery.desEN}
+        />
+
+        <CardGallery
+        paths={modeGallery.imagePaths}
+        title={spanish ? modeGallery.titleES : modeGallery.titleEN}
+        description={spanish ? modeGallery.desES : modeGallery.desEN}
         />
     </>
   )
