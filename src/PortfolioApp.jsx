@@ -1,8 +1,25 @@
-import React from 'react'
-import { AppRouter } from './router/appRouter'
+import { useSelector } from 'react-redux';
+import { NavComponent } from './components/NavComponent';
+import './PortfolioApp.css'
+import { AppRouter } from './router/AppRouter';
 
-export const PortfolioApp = () => {
+function PortfolioApp() {
+  const darkmode = useSelector((state) => state.states.darkmode);
   return (
-    <AppRouter/>
+    <>
+    <div className={`allContainer ${darkmode ? "dark":""}`}>
+      <div className="gridContainer">
+          <div className="navCell"><NavComponent/></div>
+            <div className="fixedContentCell">
+              <div className="contentCell">
+                <AppRouter/>
+              </div>
+          </div>
+        </div>  
+    </div>
+
+    </>
   )
 }
+
+export default PortfolioApp

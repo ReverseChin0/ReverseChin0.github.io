@@ -1,35 +1,46 @@
-.expandedH1{
-    letter-spacing: 0.3rem;
-    text-align: center;
-    margin-top: 14rem;
-    font-size: 4em;
-    margin-bottom: 14rem;
+.gridContainer{
+  height: 100vh;
+  /* width: 98vw; */
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+  justify-items: center;
 }
 
-.centeredtext{
-    text-align: center;
+.navCell{
+  background-color: var(--navbar-color);
+  border-radius: 15px 55px 55px 15px;
+  width: 100%;
+  margin: 10px 0 10px 2vw;
+  opacity: 0.4;
+  transition: 200ms;
 }
 
-@media (max-width: 767px) {
-    .expandedH1{
-        letter-spacing: 0.3rem;
-        font-size: 3.2rem;
-    }
+.navCell:hover,
+.navCell:focus{
+  opacity: 1;
 }
 
-@media (max-width: 480px) {
-    .expandedH1{
-        letter-spacing: 0rem;
-        font-size: 2em;
-    }
+.fixedContentCell{
+  background-color: var(--contentCell-color);
+  width: 100%;
 }
 
+.contentCell{
+  height: 96vh;
+  margin: 1vw;
+  padding-right: 5%;
+  overflow-y: scroll;
+  scrollbar-color: rgb(var(--accent-color)) #00000019;
+  scrollbar-width: thin;
+}
 
+.contentCell::-webkit-scrollbar{
+  width: 0.5vw;
+  height: 16px;
+  background-color: #00000019;
+}
 
-
-
-
-
-
-
-
+.contentCell::-webkit-scrollbar-thumb {
+  background: rgb(var(--accent-color));
+}

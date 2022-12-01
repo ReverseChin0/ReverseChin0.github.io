@@ -1,17 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import './PortfolioApp.css'
-import { PortfolioApp } from './PortfolioApp';
-import { store } from './store/store'
-import { Provider } from 'react-redux'
+import PortfolioApp from './PortfolioApp';
+import './index.css';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <Provider store={store}>
+    <Provider store={store}>
       <BrowserRouter>
-        <PortfolioApp />
+        <PortfolioApp/>
       </BrowserRouter>
-   </Provider>     
+    </Provider>
   </React.StrictMode>
 )

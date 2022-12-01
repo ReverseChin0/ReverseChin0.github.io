@@ -1,0 +1,44 @@
+.single-view-grid{
+  width: 100%;  
+  margin-top: 2vh;
+}
+
+.image-frame{
+  height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-frame>img{
+  max-height: 98%;
+  max-width: 100%;
+}
+
+
+
+.single-text-grid{
+  background-color: rgba(var(--accent-color), 0.5);
+  color: var(--text-color);
+  padding: 5px 20px 5px;
+  border-radius: 10px;
+  margin-top: 2vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.single-text-grid>h1{
+  font-size: 2.5rem;
+  min-height: 3vh;
+  margin-left: 4%;
+}
+
+.single-text-grid>p{
+  font-size: 1.2rem;
+  margin-left: 4.5%;
+  /* min-height: 20vh; */
+  max-height:fit-content;
+  white-space: pre-line;
+}
+
+

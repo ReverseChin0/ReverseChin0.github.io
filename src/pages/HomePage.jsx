@@ -1,27 +1,27 @@
-import { Col, Row } from 'antd';
-import { useSelector } from 'react-redux';
-import 'animate.css';
+import { GalleryComponent } from "../components/GalleryComponent"
+import { SingleViewContent } from "../components/SingleViewContent"
+import { enData } from "../dataobjects/englishSite";
 
 export const HomePage = () => {
-  const spanish = useSelector((state) => state.states.spanish);
 
+  let pathsArr = []
 
+  Object.entries(enData.Articles).forEach(arr => {
+    if(arr[0]!="AboutPageArticles"){
+      arr[1].forEach(pathArr => {
+        pathArr.imagePaths.map((path)=>{
+           if(!!path == true && path != "") pathsArr = [ ...pathsArr, path ]
+        })
+      });
+    }    
+  });
+  // console.log(pathsArr);
   return (
     <>
-      <Row style={{margin:'2% 0'}}>
-        <Col span={4}/>
-        <Col className='animate__animated animate__fadeIn' span={16}>
-          <h1 className = 'expandedH1'> {spanish ? '¡Bienvenido!' : '¡Welcome!'} </h1>
-          <p className = 'centeredtext'>
-            {
-              spanish ? 'Sientete libre de explorar la página y encontrar algo que te interese ✌' 
-                      : 'Feel free to explore the page and see if something might interest ya ✌'
-            }
-            <br/>
-          </p>
-        </Col>
-        <Col span={4}/>
-      </Row>
+      <SingleViewContent 
+        title={"Hello"} 
+        description={"Feel free to explore the page and see if you like something 😁"} />
+      <GalleryComponent paths={pathsArr}/>
     </>
   )
 }
