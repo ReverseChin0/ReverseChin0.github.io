@@ -13,7 +13,9 @@ export const UtilsPage = () => {
               key={article.articleTitle+"id"} 
               title={article.articleTitle} 
               description={article.description} 
-              images={article.imagePaths}/>
+              images={article.imagePaths}
+              urlLinks={article.urlLinks}
+          />
         ))
       }
     </>

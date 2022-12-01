@@ -1,9 +1,9 @@
 import '../styles/SingleViewContent.css'
 
-export const SingleViewContent = ({title="",description,images=[]}) => {
+export const SingleViewContent = ({title="",description,images=[], urlLinks=[]}) => {
+  const hasLinks = (urlLinks != null && urlLinks.length > 0) ? true : false; 
   return (
     <>
-
       <section>
         <div className="single-view-grid">
           
@@ -21,9 +21,20 @@ export const SingleViewContent = ({title="",description,images=[]}) => {
                 {!!title && <h1>{title}</h1>}
 
                 { !!description && <p>{description}</p>  }
+
+                {hasLinks && 
+                  (
+                    <>
+                      <div className="gradient"/>
+                      <ul className="check-list">
+                        {urlLinks.map( (link) => (<li><a href={link}>{link}</a></li>) )}
+                      </ul>
+                    </>
+                  )
+                }
               </div> 
               : <div/>
-          }  
+          }
 
         </div>    
       </section>
