@@ -1,0 +1,125 @@
+.spacer{
+  /* width: 100vw; */
+  height: 6vh;
+}
+
+.lg-spacer{
+  height: 94vh;
+}
+
+.gridsection{
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  opacity: 0;
+  transition: 0.6s ease-out;
+}
+
+.gridsection.inView{
+  opacity: 1;
+}
+
+.contentCard{
+  background-color: var(--transparentLightBg-color);
+  display: block;  
+  /* width: 85vw; */
+  /* grid-column: 2 / span 10;   */
+  grid-column: 1/13;
+  
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0px;
+  padding-bottom: 1.5rem;  
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.1rem;
+
+  box-shadow: 3px 6px 10px 5px #7e7a7e28;
+}
+
+main section:nth-child(odd) > .contentCard{
+  /* background-color: #dff2d9a7; */
+  background-color: var(--transparentDarkBg-color);
+  color: var(--textColor-alt);
+}
+
+.gallery{
+  display: grid;
+  gap: 0.5rem;  
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));  
+}
+
+.gallery>img{
+  max-width: 100%;
+  align-self: center;
+  cursor: pointer;
+}
+
+.gallerySmall{
+  /* box-shadow: 2px 2px 10px 5px #5e5e5e78; */
+  display: grid;
+  gap: 0.5rem;  
+  /* grid-template-columns: repeat(3,minmax(240px,1fr));   */
+}
+
+.gallerySmall>img{
+  max-width: 100%;
+  /* max-height: 30vh; */
+  align-self: center;
+  cursor: pointer;
+}
+
+.linkflex{
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.linkflex>a{
+  font-size: 1.1rem;
+}
+
+hr{
+  border-color: var(--textColor-alt);
+}
+
+@media(min-width:40rem){
+
+  .contentCard{
+    grid-column: 2 / span 10;
+    border-radius: 15px;
+  }
+
+  .alignLeft{
+    grid-column: 2 / span 5;
+  }
+  
+  .alignRight{
+    grid-column: 7 / span 5;
+  }
+
+  .linkflex>a{
+    font-size: 1.6rem;
+  }
+
+  .gallerySmall{
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  }
+}
+
+@media(min-width:80rem){
+  .contentCard{
+    grid-column: 3/span 8;
+  }
+  .alignLeft{
+    grid-column: 3 / span 4;
+  }
+
+  .alignRight{
+    grid-column: 7 / span 4;
+  }
+}
+
