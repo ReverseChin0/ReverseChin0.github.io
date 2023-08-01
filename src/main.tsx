@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
-import { AppRouter } from './router/AppRouter'
+import { AppRouter } from './myrouter/AppRouter';
 import ReactDOM from 'react-dom/client'
 // import MainApp from './MainApp.tsx'
 import './index.css'
