@@ -4,22 +4,23 @@ import './ThreeJSApp.css'
 import * as THREE from 'three';
 
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 
 const whiteBgndCol = new THREE.Color(0.9,0.95,1.0);
-const blackBgndCol = new THREE.Color(0.01,0.02,0.04);
-const currentColor = new THREE.Color(0.5,0.5,0.5);
+// const blackBgndCol = new THREE.Color(0.01,0.02,0.04);
+// const currentColor = new THREE.Color(0.5,0.5,0.5);
 const startPos = new THREE.Vector3(0,-2.5,0);
-let swappingMode = false;
-let darkmode = false;
-let tbackgnd = 0;
+// let swappingMode = false;
+// let darkmode = false;
+// let tbackgnd = 0;
 let currentSection=0;
 const queueSections: number[] = [];  
 
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-  darkmode = event.matches;  
-  swappingMode = true;
-  tbackgnd = 0
-});
+// window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+//   darkmode = event.matches;  
+//   swappingMode = true;
+//   tbackgnd = 0
+// });
 
 
 function doThree (){
@@ -57,7 +58,7 @@ function doThree (){
 
   document.body.appendChild( renderer.domElement );
 
-  const planeGeometry = new THREE.PlaneGeometry(45,45,2,2);
+  const planeGeometry = new THREE.PlaneGeometry(50,50,2,2);
   const planeMaterial = new THREE.MeshPhongMaterial( {color:0xffffff})
   const plane = new THREE.Mesh(planeGeometry,planeMaterial);
   plane.receiveShadow = true;
@@ -69,9 +70,13 @@ function doThree (){
   const loader = new GLTFLoader();
   let characterMaterial: { emissiveIntensity: number; };
 
+  const dracoLoader = new DRACOLoader();
+  dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+  loader.setDRACOLoader( dracoLoader );
+
   setTimeout(() => {
     loader.load(    
-      'models/webChar/webChar.gltf',    
+      'models/webchar/webchar.gltf',    
        ( gltf ) => {
         
         gltf.parser.getDependencies( 'material' ).then( ( materials ) => {
@@ -116,13 +121,13 @@ function doThree (){
    
       },
       function(progress){
-        progress.preventDefault();
+        console.log( ( progress.loaded / progress.total * 100 ) + '% loaded' );
       },    
       function ( error ) {
          console.log( 'An error happened',error);  
       }
     );
-  }, 1200);
+  }, 500);
   
   setTimeout(() => {
     character?.traverse((child:any)=>{      
@@ -150,21 +155,21 @@ function doThree (){
 
   const clock = new THREE.Clock();
 
-  function swapBackgroundColor(color1:THREE.Color,color2:THREE.Color, delta:number)
-  {
-    tbackgnd+=delta/0.5;    
-    currentColor.lerpColors(color1,color2,tbackgnd);   
-    ambientLight.color = currentColor;
-    scene.background = currentColor;
-    scene.fog!.color = currentColor;
-    spotLight.color = currentColor;
+  // function swapBackgroundColor(color1:THREE.Color,color2:THREE.Color, delta:number)
+  // {
+  //   tbackgnd+=delta/0.5;    
+  //   currentColor.lerpColors(color1,color2,tbackgnd);   
+  //   ambientLight.color = currentColor;
+  //   scene.background = currentColor;
+  //   scene.fog!.color = currentColor;
+  //   spotLight.color = currentColor;
 
-    if(tbackgnd >= 1)
-    {
-      swappingMode = false;
-      tbackgnd = 0;
-    }      
-  }
+  //   if(tbackgnd >= 1)
+  //   {
+  //     swappingMode = false;
+  //     tbackgnd = 0;
+  //   }      
+  // }
   
   let dt=0;
   
@@ -177,14 +182,14 @@ function doThree (){
     camera.lookAt(cameraLookPos);    
     camera.position.lerp(cameraTargetPos,0.05);
 
-    if(swappingMode)
-    {
-      // console.log("swapping",t);
-      if(darkmode)
-        swapBackgroundColor(whiteBgndCol,blackBgndCol,dt);
-      else
-        swapBackgroundColor(blackBgndCol,whiteBgndCol,dt);
-    }
+    // if(swappingMode)
+    // {
+    //   // console.log("swapping",t);
+    //   if(darkmode)
+    //     swapBackgroundColor(whiteBgndCol,blackBgndCol,dt);
+    //   else
+    //     swapBackgroundColor(blackBgndCol,whiteBgndCol,dt);
+    // }
 
     if(characterMaterial){      
       characterMaterial.emissiveIntensity = (Math.sin(clock.elapsedTime*2)+1)*0.5;
@@ -306,9 +311,9 @@ function doThree (){
 
 export const ThreeJSApp = forwardRef((_props, ref) => {   
 
-  const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-  darkmode = darkThemeMq.matches;  
-  swappingMode = true;  
+  // const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+  // darkmode = darkThemeMq.matches;  
+  // swappingMode = true;  
 
   useImperativeHandle(ref, () => ({    
     childFunction(arg:number) {

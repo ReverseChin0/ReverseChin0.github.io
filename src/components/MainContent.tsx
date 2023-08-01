@@ -14,6 +14,7 @@ import {
           EN_webContent as webContent,
        } from '../types/contents'
 import TextImageDisplayer from './TextImageDisplayer';
+import { NavLink } from 'react-router-dom';
 
 interface Props{
   currentSect:(arg:number)=>void;
@@ -129,6 +130,7 @@ export const MainContent: React.FC<Props> = ({currentSect}) => {
         />
            
         <div className='lg-spacer'/>
+        <NavLink to={'/privacyfutbol'}>Privacy</NavLink>
       </main>
     </>
   )

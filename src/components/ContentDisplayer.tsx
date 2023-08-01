@@ -9,11 +9,16 @@ interface linkContent{
   icon?:string;
 }
 
+interface images{
+  image:string,
+  image_sm:string
+}
+
 interface Props{
   title: string
   contents?: string[]
   links?: linkContent[]
-  images?: string[]
+  images?: images[]
   alignType?: string;
   setSection?:(arg:number)=>void; //callback del padre
   idsection: number;
@@ -23,13 +28,24 @@ function openImage(route:string){
   window.open(route);
 }
 
-function createGallery(routesToImages?:string[]){
+function createGallery(routesToImages?:images[]){
   if(routesToImages == null || routesToImages == undefined)
   return;
-
-  const imagesload = routesToImages?.map( (image,index) => 
-    {
-      return <img onClick={() => openImage(image)} key={index} src={image} alt="no image found" />
+  
+  const imagesload = routesToImages?.map( (img,index) => 
+    {                  
+      return (        
+              <div 
+                style={{backgroundImage:`url(${img.image_sm})`}} 
+                key={index}
+              > 
+                <img 
+                  loading='lazy' 
+                  onClick={() => openImage(img.image)}                   
+                  src={img.image} 
+                  alt="no image found" 
+                />
+              </div>); 
     }
   );
 

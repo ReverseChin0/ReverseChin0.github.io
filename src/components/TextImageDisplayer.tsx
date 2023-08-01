@@ -10,7 +10,12 @@ interface contentGroups{
   link?:string;
   linkTitle?:string;
   icon?:string;
-  images:string[];
+  images:images[];
+}
+
+interface images{
+  image:string,
+  image_sm:string
 }
 
 interface ImageTextContent{
@@ -25,13 +30,25 @@ function openImage(route:string){
   window.open(route);
 }
 
-function createGallery(routesToImages?:string[]){
+function createGallery(routesToImages?:images[]){
   if(routesToImages == null || routesToImages == undefined)
   return;
 
-  const imagesload = routesToImages?.map( (image,index) => 
+  const imagesload = routesToImages?.map( (img,index) => 
     {
-      return <img onClick={() => openImage(image)} key={index} src={image} alt="no image found" />
+      return (
+              <div 
+                  style={{backgroundImage:`url(${img.image_sm})`}} 
+                  key={index}
+              > 
+                <img 
+                  loading='lazy' 
+                  onClick={() => openImage(img.image)}                   
+                  src={img.image} 
+                  alt="no image found" 
+                />
+              </div>
+      )       
     }
   );
 

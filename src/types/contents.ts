@@ -4,6 +4,10 @@ interface linkContent{
   icon?:string;
 }
 
+interface images{
+  image:string,
+  image_sm:string
+}
 
 interface contentGroups{
   contentTitle:string;
@@ -11,7 +15,7 @@ interface contentGroups{
   link?:string;
   linkTitle?:string;
   icon?:string;
-  images:string[];
+  images:images[];
 }
 
 interface BaseContent {
@@ -19,7 +23,7 @@ interface BaseContent {
   title: string;
   contents?: string[];
   links?: linkContent[];
-  images?: string[];
+  images?: images[];
 }
 
 interface ImageTextContent{
@@ -71,10 +75,10 @@ export const ES_AboutCont:BaseContent = { //ya
       }
   ],
   images:[
-          basePath+'about/CV_2023_Francisco.jpg',
-          basePath+'about/FotoChida_opt.jpg',
-          basePath+'about/ReactCertificate.jpg',
-          basePath+'about/BlenderCertificate.jpg',
+          {image: basePath+'about/CV_2023_Francisco.jpg',   image_sm:basePath+'about/CV_2023_Francisco_sm.jpg'},
+          {image: basePath+'about/FotoChida_opt.jpg',       image_sm:basePath+'about/FotoChida_opt_sm.jpg'},
+          {image: basePath+'about/ReactCertificate.jpg',    image_sm:basePath+'about/BlenderCertificate_sm.jpg'},
+          {image: basePath+'about/BlenderCertificate.jpg',  image_sm:basePath+'about/BlenderCertificate_sm.jpg'},
          ]  
 }
 
@@ -109,130 +113,145 @@ export const EN_AboutCont:BaseContent = { //ya
       }
   ],
   images:[
-          basePath+'about/CV_2023_Francisco.jpg',
-          basePath+'about/FotoChida_opt.jpg',
-          basePath+'about/ReactCertificate.jpg',
-          basePath+'about/BlenderCertificate.jpg',
-         ]  
+    {image: basePath+'about/CV_2023_Francisco.jpg',   image_sm:basePath+'about/CV_2023_Francisco_sm.jpg'},
+    {image: basePath+'about/FotoChida_opt.jpg',       image_sm:basePath+'about/FotoChida_opt_sm.jpg'},
+    {image: basePath+'about/ReactCertificate.jpg',    image_sm:basePath+'about/BlenderCertificate_sm.jpg'},
+    {image: basePath+'about/BlenderCertificate.jpg',  image_sm:basePath+'about/BlenderCertificate_sm.jpg'},
+   ]   
 }
 
 export const ES_boxGalleryCont:BaseContent = {
   title: 'Personalización Personajes',
   contents: ['Este es un proyecto que estoy realizando para titularme, el objetivo era conseguir un alto nivel de personalización'],  
-  images: [ basePath+'experiments/boxing_1.jpg',
-            basePath+'experiments/boxing_2.jpg',
-            basePath+'experiments/boxing_3.jpg'
+  images: [ 
+            {image: basePath+'experiments/boxing_1.jpg', image_sm: basePath+'experiments/boxing_1_sm.jpg'},
+            {image: basePath+'experiments/boxing_2.jpg', image_sm: basePath+'experiments/boxing_2_sm.jpg'},
+            {image: basePath+'experiments/boxing_3.jpg', image_sm: basePath+'experiments/boxing_3_sm.jpg'}
           ]
 }
 
 export const EN_boxGalleryCont:BaseContent = {
   title: 'Character customization',
   contents: ['This is a project I am doing for my degree, the objective was to achieve a high level of customization'],  
-  images: [ basePath+'experiments/boxing_1.jpg',
-            basePath+'experiments/boxing_2.jpg',
-            basePath+'experiments/boxing_3.jpg'
-          ]
+  images: [ 
+    {image: basePath+'experiments/boxing_1.jpg', image_sm: basePath+'experiments/boxing_1_sm.jpg'},
+    {image: basePath+'experiments/boxing_2.jpg', image_sm: basePath+'experiments/boxing_2_sm.jpg'},
+    {image: basePath+'experiments/boxing_3.jpg', image_sm: basePath+'experiments/boxing_3_sm.jpg'}
+  ]
 }
 
 export const ES_futGalleryCont:BaseContent = {
   title: "Fútbol Asertivo",
   contents:['Un pequeño juego realizado para Familia Incluyente A.C. modelado y programado por mi'],
-  images: [ basePath+'futbol/futbol-1.jpg',
-            basePath+'futbol/futbol-2.jpg',
-            basePath+'futbol/futbol-3.jpg'
+  images: [ 
+            {image: basePath+'futbol/futbol-1.jpg', image_sm: basePath+'futbol/futbol-1_sm.jpg'},
+            {image: basePath+'futbol/futbol-2.jpg', image_sm: basePath+'futbol/futbol-2_sm.jpg'},
+            {image: basePath+'futbol/futbol-3.jpg', image_sm: basePath+'futbol/futbol-3_sm.jpg'},
           ],
 }
 
 export const EN_futGalleryCont:BaseContent = {
   title: "Assertive Soccer",
   contents:['A small game made for Familia Incluyente A.C. modeled and programmed by me.'],
-  images: [ basePath+'futbol/futbol-1.jpg',
-            basePath+'futbol/futbol-2.jpg',
-            basePath+'futbol/futbol-3.jpg'
-          ],
+  images: [ 
+    {image: basePath+'futbol/futbol-1.jpg', image_sm: basePath+'futbol/futbol-1_sm.jpg'},
+    {image: basePath+'futbol/futbol-2.jpg', image_sm: basePath+'futbol/futbol-2_sm.jpg'},
+    {image: basePath+'futbol/futbol-3.jpg', image_sm: basePath+'futbol/futbol-3_sm.jpg'},
+  ],
 }
 
 export const ES_substanceCont:BaseContent = { //ya
   title:'Substance Designer',
   contents:['Materiales hechos en substance designer, aqui aprendi cómo funcionan los materiales PBR en el workflow de metallic-roughness y specular-glossines'],
-  images:[  basePath+'shaderVariety/subDesignMats_1.jpg',
-            basePath+'shaderVariety/subDesignMats_2.jpg'
+  images:[  
+            {image:basePath+'shaderVariety/subDesignMats_1.jpg', image_sm: basePath+'shaderVariety/subDesignMats_1_sm.jpg'},
+            {image:basePath+'shaderVariety/subDesignMats_2.jpg', image_sm: basePath+'shaderVariety/subDesignMats_2_sm.jpg'},
          ]
 }
 
 export const EN_substanceCont:BaseContent = { //ya
   title:'Substance Designer',
   contents:['Materials made in substance designer, here I learned how PBR materials work in the metallic-roughness and specular-glossines workflow.'],
-  images:[  basePath+'shaderVariety/subDesignMats_1.jpg',
-            basePath+'shaderVariety/subDesignMats_2.jpg'
+  images:[  
+            {image:basePath+'shaderVariety/subDesignMats_1.jpg', image_sm: basePath+'shaderVariety/subDesignMats_1_sm.jpg'},
+            {image:basePath+'shaderVariety/subDesignMats_2.jpg', image_sm: basePath+'shaderVariety/subDesignMats_2_sm.jpg'},
          ]
 }
 
 export const ES_shadGalleryCont:BaseContent = {
   title: 'Shaders',
   contents: ['Algunos Shaders que he hecho en la escuela y en mi tiempo libre ヾ(•ω•`)o'],
-  images: [ basePath+'shaderVariety/ditherShader_0.jpg',
-                  basePath+'shaderVariety/shadervariety_1.jpg',
-                  basePath+'shaderVariety/shadervariety_2.jpg',
-                  basePath+'shaderVariety/shadervariety_3.jpg']
+  images: [ 
+              {image: basePath+'shaderVariety/ditherShader_0.jpg', image_sm:basePath+'shaderVariety/ditherShader_0_sm.jpg'},
+              {image: basePath+'shaderVariety/shadervariety_1.jpg', image_sm:basePath+'shaderVariety/shadervariety_1_sm.jpg'},
+              {image: basePath+'shaderVariety/shadervariety_2.jpg', image_sm:basePath+'shaderVariety/shadervariety_2_sm.jpg'},
+              {image: basePath+'shaderVariety/shadervariety_3.jpg', image_sm:basePath+'shaderVariety/shadervariety_3_sm.jpg'},
+          ]
 }
 
 export const EN_shadGalleryCont:BaseContent = {
   title: 'Shaders',
   contents: ['Some Shaders that I have made at school and in my spare time ヾ(•ω•`)o'],
-  images: [ basePath+'shaderVariety/ditherShader_0.jpg',
-                  basePath+'shaderVariety/shadervariety_1.jpg',
-                  basePath+'shaderVariety/shadervariety_2.jpg',
-                  basePath+'shaderVariety/shadervariety_3.jpg']
+  images: [ 
+              {image: basePath+'shaderVariety/ditherShader_0.jpg', image_sm:basePath+'shaderVariety/ditherShader_0_sm.jpg'},
+              {image: basePath+'shaderVariety/shadervariety_1.jpg', image_sm:basePath+'shaderVariety/shadervariety_1_sm.jpg'},
+              {image: basePath+'shaderVariety/shadervariety_2.jpg', image_sm:basePath+'shaderVariety/shadervariety_2_sm.jpg'},
+              {image: basePath+'shaderVariety/shadervariety_3.jpg', image_sm:basePath+'shaderVariety/shadervariety_3_sm.jpg'},
+          ]
 }
 
 export const ES_experimGalleryCont:BaseContent ={
   title:'Unos Experimentillos',
   contents: ['Experimentos con shaders, meshes, inverse kinematics, etcétera'],
-  images: [ basePath+'experiments/spider.gif',
-            basePath+'experiments/matrixProjection.jpg',
-            basePath+'experiments/mesh-Deform.jpg',
-            basePath+'experiments/customLighting.jpg']
+  images: [ 
+            {image: basePath+'experiments/spider.gif',image_sm: basePath+'experiments/matrixProjection_sm.jpg'},
+            {image: basePath+'experiments/matrixProjection.jpg',image_sm: basePath+'experiments/matrixProjection_sm.jpg'},
+            {image: basePath+'experiments/mesh-Deform.jpg',image_sm: basePath+'experiments/mesh-Deform_sm.jpg'},
+            {image: basePath+'experiments/customLighting.jpg',image_sm: basePath+'experiments/customLighting_sm.jpg'},
+          ]
 }
 
 export const EN_experimGalleryCont:BaseContent ={
   title:'A Few Experiments',
   contents: ['Experiments with shaders, meshes, inverse kinematics, etcetera'],
-  images: [ basePath+'experiments/spider.gif',
-            basePath+'experiments/matrixProjection.jpg',
-            basePath+'experiments/mesh-Deform.jpg',
-            basePath+'experiments/customLighting.jpg']
+  images: [ 
+            {image: basePath+'experiments/spider.gif',image_sm: basePath+'experiments/matrixProjection_sm.jpg'},
+            {image: basePath+'experiments/matrixProjection.jpg',image_sm: basePath+'experiments/matrixProjection_sm.jpg'},
+            {image: basePath+'experiments/mesh-Deform.jpg',image_sm: basePath+'experiments/mesh-Deform_sm.jpg'},
+            {image: basePath+'experiments/customLighting.jpg',image_sm: basePath+'experiments/customLighting_sm.jpg'},
+          ]
 }
 
 export const ES_modelGalryCont: BaseContent = { 
   title: 'Modelado',
   contents: ['Modelos que he realizado'],
-  images: [ basePath + 'models/BattleAxe.jpg',
-            basePath + 'models/rifleShaded.jpg',
-            basePath + 'models/Boss.jpg',
-            basePath + 'models/Charm.jpg', 
-            basePath + 'models/Chunky.jpg', 
-            basePath + 'models/Cozy.jpg',
-            basePath + 'models/Dance.jpg',
-            basePath + 'models/Ethereal.jpg',
-            basePath + 'models/World.jpg',            
-            basePath + 'models/Gate_Kurisu3.jpg',
-            basePath + 'models/Grave.jpg',
-            basePath + 'models/Harvest_skin.jpg',
-            basePath + 'models/Illusion.jpg',
-            basePath + 'models/Leap.jpg',
-            basePath + 'models/magic.jpg',
-            basePath + 'models/Mask.jpg',
-            basePath + 'models/Porthole.jpg',
-            basePath + 'models/pretend.jpg',
-            basePath + 'models/Blend1.jpg',
-            basePath + 'models/rifleHiPoly.jpg',                        
-            basePath + 'models/Shy.jpg',
-            basePath + 'models/Shy2.jpg',
-            basePath + 'models/Soft.jpg',
-            basePath + 'models/Soft2.jpg',
-            basePath + 'models/spirit.jpg',
-            basePath + 'models/Gate_Kurisu1.jpg',
+  images: [ 
+            {image: basePath + 'models/BattleAxe.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/rifleShaded.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Boss.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Charm.jpg', image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Chunky.jpg', image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Cozy.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Dance.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Ethereal.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/World.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Gate_Kurisu3.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Grave.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Harvest_skin.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Illusion.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Leap.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/magic.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Mask.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Porthole.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/pretend.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Blend1.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/rifleHiPoly.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Shy.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Shy2.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Soft.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Soft2.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/spirit.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Gate_Kurisu1.jpg',image_sm:basePath + 'models/World_sm.jpg'},
           ]
 
 }
@@ -240,32 +259,33 @@ export const ES_modelGalryCont: BaseContent = {
 export const EN_modelGalryCont: BaseContent = { 
   title: '3D Modeling',
   contents: ['Models I have made'],
-  images: [ basePath + 'models/BattleAxe.jpg',
-            basePath + 'models/rifleShaded.jpg',
-            basePath + 'models/Boss.jpg',
-            basePath + 'models/Charm.jpg', 
-            basePath + 'models/Chunky.jpg', 
-            basePath + 'models/Cozy.jpg',
-            basePath + 'models/Dance.jpg',
-            basePath + 'models/Ethereal.jpg',
-            basePath + 'models/World.jpg',            
-            basePath + 'models/Gate_Kurisu3.jpg',
-            basePath + 'models/Grave.jpg',
-            basePath + 'models/Harvest_skin.jpg',
-            basePath + 'models/Illusion.jpg',
-            basePath + 'models/Leap.jpg',
-            basePath + 'models/magic.jpg',
-            basePath + 'models/Mask.jpg',
-            basePath + 'models/Porthole.jpg',
-            basePath + 'models/pretend.jpg',
-            basePath + 'models/Blend1.jpg',
-            basePath + 'models/rifleHiPoly.jpg',                        
-            basePath + 'models/Shy.jpg',
-            basePath + 'models/Shy2.jpg',
-            basePath + 'models/Soft.jpg',
-            basePath + 'models/Soft2.jpg',
-            basePath + 'models/spirit.jpg',
-            basePath + 'models/Gate_Kurisu1.jpg',
+  images: [ 
+            {image: basePath + 'models/BattleAxe.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/rifleShaded.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Boss.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Charm.jpg', image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Chunky.jpg', image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Cozy.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Dance.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Ethereal.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/World.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Gate_Kurisu3.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Grave.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Harvest_skin.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Illusion.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Leap.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/magic.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Mask.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Porthole.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/pretend.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Blend1.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/rifleHiPoly.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Shy.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Shy2.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Soft.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Soft2.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/spirit.jpg',image_sm:basePath + 'models/World_sm.jpg'},
+            {image: basePath + 'models/Gate_Kurisu1.jpg',image_sm:basePath + 'models/World_sm.jpg'},
           ]
 
 }
@@ -279,32 +299,43 @@ export const ES_webContent: ImageTextContent = {
                     content:'Una aplicación en React que busca Gifts （⊙ｏ⊙）',
                     linkTitle:'Gifexpert',
                     link:'https://reversechin0.github.io/react-gifexpert',
-                    images:[basePath+'webpages/gifexpert1.jpg']    
+                    images:[{ 
+                      image:basePath+'webpages/gifexpert1.jpg',
+                      image_sm:basePath+'webpages/gifexpert1_sm.jpg'
+                    }]    
                   },
                   {
                     contentTitle:'MERN-Calendar',
                     content:'Aplicación con Backend que guarda eventos en un calendario, Utiliza Redux, Express y MongoDB y necesitas autenticar Usuario (⓿_⓿)',
                     linkTitle:'MERN-Calendar (tal vez dure un rato en cargar)',
                     link:'https://mern-calendar-chino.herokuapp.com/auth/login',
-                    images:[basePath+'webpages/mern1.jpg',
-                            basePath+'webpages/mern2.jpg',
-                            basePath+'webpages/mern3.jpg',]    
+                    images:
+                    [
+                      {image: basePath+'webpages/mern1.jpg',image_sm: basePath+'webpages/mern1_sm.jpg'},
+                      {image: basePath+'webpages/mern2.jpg',image_sm: basePath+'webpages/mern2_sm.jpg'},
+                      {image: basePath+'webpages/mern3.jpg',image_sm: basePath+'webpages/mern3_sm.jpg'},
+                    ]    
                   },
                   {
                     contentTitle:'SPA_Heroes',
                     content:'Aplicacion con autenticación simple que muestra un repertorio de super heroes (✿◡‿◡)',
                     linkTitle:'SPA_Heroes',
                     link:'https://reversechin0.github.io/spa_heroes',
-                    images:[basePath+'webpages/HeroesSPA1.jpg',]
+                    images:
+                    [{
+                      image: basePath+'webpages/HeroesSPA1.jpg', image_sm: basePath+'webpages/HeroesSPA1_sm.jpg'
+                    }]
                   },
                   {
                     contentTitle:'Portafolio Anterior',
                     content:'Mi página principal anterior 😅',
                     linkTitle:'No lo tengo ya, pero dejo mi Repositorio de Github',
                     link:'https://reversechin0.github.io/',
-                    images:[basePath+'webpages/legacy1.jpg',
-                            basePath+'webpages/legacy2.jpg',
-                            basePath+'webpages/legacy3.jpg',]    
+                    images:[
+                      { image:basePath+'webpages/legacy1.jpg', image_sm: basePath+'webpages/legacy1_sm.jpg'},
+                      { image:basePath+'webpages/legacy2.jpg', image_sm: basePath+'webpages/legacy2_sm.jpg'},
+                      { image:basePath+'webpages/legacy3.jpg', image_sm: basePath+'webpages/legacy3_sm.jpg'},
+                    ]   
                   }
                 ]
 }
@@ -318,32 +349,43 @@ export const EN_webContent: ImageTextContent = {
                     content:'A React application that searches Gifs（⊙ｏ⊙）',
                     linkTitle:'Gifexpert',
                     link:'https://reversechin0.github.io/react-gifexpert',
-                    images:[basePath+'webpages/gifexpert1.jpg']    
+                    images:[{ 
+                      image:basePath+'webpages/gifexpert1.jpg',
+                      image_sm:basePath+'webpages/gifexpert1_sm.jpg'
+                    }]
                   },
                   {
                     contentTitle:'MERN-Calendar',
                     content:'Backend application that saves events in a calendar, uses Redux, Express and MongoDB and you need to authenticate User (⓿_⓿)',
                     linkTitle:'MERN-Calendar (may take a while to load)',
                     link:'https://mern-calendar-chino.herokuapp.com/auth/login',
-                    images:[basePath+'webpages/mern1.jpg',
-                            basePath+'webpages/mern2.jpg',
-                            basePath+'webpages/mern3.jpg',]    
+                    images:
+                    [
+                      {image: basePath+'webpages/mern1.jpg',image_sm: basePath+'webpages/mern1_sm.jpg'},
+                      {image: basePath+'webpages/mern2.jpg',image_sm: basePath+'webpages/mern2_sm.jpg'},
+                      {image: basePath+'webpages/mern3.jpg',image_sm: basePath+'webpages/mern3_sm.jpg'},
+                    ]    
                   },
                   {
                     contentTitle:'SPA_Heroes',
                     content:'Application with simple authentication showing a repertoire of super heroes (✿◡‿◡)',
                     linkTitle:'SPA_Heroes',
                     link:'https://reversechin0.github.io/spa_heroes',
-                    images:[basePath+'webpages/HeroesSPA1.jpg',]
+                    images:
+                    [{
+                      image: basePath+'webpages/HeroesSPA1.jpg', image_sm: basePath+'webpages/HeroesSPA1_sm.jpg'
+                    }]
                   },
                   {
                     contentTitle:'Previous Portfolio',
                     content:'My previous home page 😅',
                     linkTitle:"I don't have it anymore, but here is my Github repository",
                     link:'https://reversechin0.github.io/',
-                    images:[basePath+'webpages/legacy1.jpg',
-                            basePath+'webpages/legacy2.jpg',
-                            basePath+'webpages/legacy3.jpg',]    
+                    images:[
+                      { image:basePath+'webpages/legacy1.jpg', image_sm: basePath+'webpages/legacy1_sm.jpg'},
+                      { image:basePath+'webpages/legacy2.jpg', image_sm: basePath+'webpages/legacy2_sm.jpg'},
+                      { image:basePath+'webpages/legacy3.jpg', image_sm: basePath+'webpages/legacy3_sm.jpg'},
+                    ]    
                   }
                 ]
 }
