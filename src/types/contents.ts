@@ -61,9 +61,9 @@ export const ES_AboutCont:BaseContent = { //ya
       {
         title:'LinkedIn',link:'https://www.linkedin.com/in/francisco-emmanuel-castañeda-lópez-550b07251',icon:'faLinkedinIn'
       },
-      // {
-      //   title:'Google-Play', link:'',icon:'faGooglePlay'
-      // },
+      {
+        title:'Google-Play', link:'https://play.google.com/store/apps/details?id=com.FamiliaIncluyenteAC.FutbolAsertivo&pcampaignid=web_share',icon:'faGooglePlay'
+      },
       {
         title:'CHI-NO', link:'https://www.youtube.com/@ReverseChin0',icon:'faYoutube'
       },
@@ -99,9 +99,9 @@ export const EN_AboutCont:BaseContent = { //ya
       {
         title:'LinkedIn',link:'https://www.linkedin.com/in/francisco-emmanuel-castañeda-lópez-550b07251',icon:'faLinkedinIn'
       },
-      // {
-      //   title:'Google-Play', link:'',icon:'faGooglePlay'
-      // },
+      {
+        title:'Google-Play', link:'https://play.google.com/store/apps/details?id=com.FamiliaIncluyenteAC.FutbolAsertivo&pcampaignid=web_share',icon:'faGooglePlay'
+      },
       {
         title:'CHI-NO', link:'https://www.youtube.com/@ReverseChin0',icon:'faYoutube'
       },
@@ -148,6 +148,9 @@ export const ES_futGalleryCont:BaseContent = {
             {image: basePath+'futbol/futbol-2.jpg', image_sm: basePath+'futbol/futbol-2_sm.jpg'},
             {image: basePath+'futbol/futbol-3.jpg', image_sm: basePath+'futbol/futbol-3_sm.jpg'},
           ],
+  links:[{
+    title:'Google-Play', link:'https://play.google.com/store/apps/details?id=com.FamiliaIncluyenteAC.FutbolAsertivo&pcampaignid=web_share',icon:'faGooglePlay'
+  }]
 }
 
 export const EN_futGalleryCont:BaseContent = {
@@ -158,6 +161,9 @@ export const EN_futGalleryCont:BaseContent = {
     {image: basePath+'futbol/futbol-2.jpg', image_sm: basePath+'futbol/futbol-2_sm.jpg'},
     {image: basePath+'futbol/futbol-3.jpg', image_sm: basePath+'futbol/futbol-3_sm.jpg'},
   ],
+  links:[{
+    title:'Google-Play', link:'https://play.google.com/store/apps/details?id=com.FamiliaIncluyenteAC.FutbolAsertivo&pcampaignid=web_share',icon:'faGooglePlay'
+  }]
 }
 
 export const ES_substanceCont:BaseContent = { //ya

@@ -76,7 +76,8 @@ export const MainContent: React.FC<Props> = ({currentSect}) => {
 
         <ContentDisplayer
             title={futGalleryCont.title} 
-            contents={futGalleryCont.contents}            
+            contents={futGalleryCont.contents}
+            links={futGalleryCont.links}
             images={futGalleryCont.images} 
             alignType={'right'}
             idsection={3}
