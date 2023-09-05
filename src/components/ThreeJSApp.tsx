@@ -5,6 +5,7 @@ import * as THREE from 'three';
 
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js'
 
 const whiteBgndCol = new THREE.Color(0.9,0.95,1.0);
 // const blackBgndCol = new THREE.Color(0.01,0.02,0.04);
@@ -25,7 +26,8 @@ const queueSections: number[] = [];
 
 function doThree (){
 
-  const animActions =    ['Standup','Idle','backflip','HipHop','Pose1','Pose2','TPose'];
+  const animActions =    ['Chicken','Idle','Backflip','Mad','Shuffle','walkingDance','Chicken'];
+  
   let canBeInterrupted = [false    , true , true    , true   , true  , true  , true  ];
   let previousAction:THREE.AnimationAction, activeAction : THREE.AnimationAction;
   let character: THREE.Object3D<THREE.Event> | null;
@@ -41,7 +43,7 @@ function doThree (){
   const spotLight = new THREE.SpotLight(whiteBgndCol);
   scene.add(spotLight);
   spotLight.position.set(-10,30,0);
-  spotLight.castShadow = true;
+  // spotLight.castShadow = true;
   spotLight.angle = Math.PI / 4;  
 
   scene.fog = new THREE.Fog(whiteBgndCol,10,19);
@@ -54,17 +56,32 @@ function doThree (){
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize( window.innerWidth, window.innerHeight );
-  renderer.shadowMap.enabled = true;
+  // renderer.shadowMap.enabled = true;
+
+  const hdriloader = new RGBELoader();
+
+  hdriloader.load('enviroments/brown_photostudio_02_1k.hdr', function(texture){
+    texture.mapping = THREE.EquirectangularReflectionMapping;
+    // scene.background = texture; //esto  nomas lo pone pero lo mapea a las coordenadas de la pantalla
+    scene.environment = texture; //esto hace que  sea global el environment, todos los materiales standard se actualizarian con esto como su refleccion
+  });
+
+  const texloader = new THREE.TextureLoader();
+  texloader.load('enviroments/brown_photostudio_02.jpg' , function(texture){
+    texture.mapping = THREE.EquirectangularReflectionMapping;
+    scene.background = texture;  
+  });
+
 
   document.body.appendChild( renderer.domElement );
 
-  const planeGeometry = new THREE.PlaneGeometry(50,50,2,2);
-  const planeMaterial = new THREE.MeshPhongMaterial( {color:0xffffff})
-  const plane = new THREE.Mesh(planeGeometry,planeMaterial);
-  plane.receiveShadow = true;
-  plane.rotateX(-90*(Math.PI/180))
-  plane.position.set(0,-3,0);
-  scene.add(plane);  
+  // const planeGeometry = new THREE.PlaneGeometry(50,50,2,2);
+  // const planeMaterial = new THREE.MeshPhongMaterial( {color:0xffffff})
+  // const plane = new THREE.Mesh(planeGeometry,planeMaterial);
+  // // plane.receiveShadow = true;
+  // plane.rotateX(-90*(Math.PI/180))
+  // plane.position.set(0,-3,0);
+  // scene.add(plane);  
 
 
   const loader = new GLTFLoader();
@@ -76,7 +93,7 @@ function doThree (){
 
   setTimeout(() => {
     loader.load(    
-      'models/webchar/webchar.gltf',    
+      'models/webchar/character_And_Materials.gltf',    
        ( gltf ) => {
         
         gltf.parser.getDependencies( 'material' ).then( ( materials ) => {
@@ -87,9 +104,9 @@ function doThree (){
         clips = gltf.animations;
         character = gltf.scene;
    
-        character.children.map((child)=>{
-          child.castShadow=true;          
-        });
+        // character.children.map((child)=>{
+        //   child.castShadow=true;          
+        // });
 
         character.position.copy(startPos);
         scene.add(character);
@@ -267,7 +284,7 @@ function doThree (){
         if(oldestSection == 2) desiredState = 3;
         if(oldestSection! == 4) desiredState = 4;
         if(oldestSection! == 6 || oldestSection! > 6) desiredState = 5;
-        if(oldestSection! == 8) desiredState = 3;
+        if(oldestSection! == 8) desiredState = 6;
      
       }
             
