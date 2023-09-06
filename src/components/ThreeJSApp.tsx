@@ -291,11 +291,13 @@ function doThree (){
     }
   }
 
-  function manageCamPos(){
 
+  function manageCamPos(){    
+
+    const largeWindow = window.innerWidth>640;
     if(currentSection == 0 || currentSection == 1)
     {
-      LookPosTarget.set(0,-2,0);
+      LookPosTarget.set(0,-2,0);          
       cameraTargetPos.set(0,0,5);
     }
 
@@ -307,21 +309,27 @@ function doThree (){
 
     if(currentSection == 4) {
       LookPosTarget.set(1,-1.5,0);
-      cameraTargetPos.set(1.5,-1,2); 
+      if(largeWindow) cameraTargetPos.set(1.5,-1,2); 
+      else
+        cameraTargetPos.set(0.12,-0.5,2.5);      
     }    
 
     if(currentSection >= 6 && currentSection <= 7)
     {
       LookPosTarget.set(-1,-1.5,0);
-      cameraTargetPos.set(-1.5,-1,2);
+      if(largeWindow) cameraTargetPos.set(-1.5,-1,2);
+      else
+        cameraTargetPos.set(-0.12,-0.5,2.5);
     }
 
     if(currentSection == 8)
     {
       LookPosTarget.set(0,-1.5,0);
-      cameraTargetPos.set(0,-1.5,2);
+      cameraTargetPos.set(0,-1.5,2);      
     }
+    
   }
+
   renderer.setAnimationLoop( update );
   // update(); //Iniciamos el loop
 }

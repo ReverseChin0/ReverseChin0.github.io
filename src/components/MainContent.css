@@ -97,10 +97,15 @@ main section:nth-child(odd) > .contentCard{
   gap: 0.8rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+
+
 }
 
 .linkflex>a{
   font-size: 1.1rem;
+  background-color: white;
+  border-radius: 15px;
+  padding: 0.75rem 0.5rem;
 }
 
 hr{

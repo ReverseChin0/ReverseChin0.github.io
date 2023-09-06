@@ -4,7 +4,7 @@ import { faGithubAlt, faGooglePlay, faItchIo, faLinkedinIn, faYoutube } from '@f
 import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 interface linkContent{
-  title:string;
+  title?:string;
   link:string;
   icon?:string;
 }
