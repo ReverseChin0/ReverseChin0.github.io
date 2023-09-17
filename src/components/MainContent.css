@@ -108,6 +108,11 @@ main section:nth-child(odd) > .contentCard{
   padding: 0.75rem 0.5rem;
 }
 
+.linkflex>a:hover{
+  background-color: var(--fifth-color);
+  color: white;
+}
+
 hr{
   border-color: var(--textColor-alt);
 }
