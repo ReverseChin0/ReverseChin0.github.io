@@ -15,6 +15,7 @@ import {
        } from '../types/contents'
 import TextImageDisplayer from './TextImageDisplayer';
 import { NavLink } from 'react-router-dom';
+import YoutubeEmbed from './YoutubeEmbed ';
 
 interface Props{
   currentSect:(arg:number)=>void;
@@ -119,7 +120,8 @@ export const MainContent: React.FC<Props> = ({currentSect}) => {
             idsection={7}
             setSection={updateCurrentSection}
         />
-                
+        
+        <YoutubeEmbed title='Effects Made With Unreal' embedId='Zkmjuq6NkG8'/>
 
         <ContentDisplayer
             title={experimGalleryCont.title} 
